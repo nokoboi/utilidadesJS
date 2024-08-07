@@ -22,9 +22,8 @@ imagenesPequenas.forEach((imagen) => {
         event.preventDefault(); // Previene la acción por defecto del enlace
 
         // Clona la imagen para poder moverla sin eliminarla del original, clonenode hace una copia exacta
-        let clon = {...imagen}
+        let clon = {...contenedorImg}
         console.log(clon)
-        console.log(imagen)
         const imagenClonada = imagen.cloneNode(true);
         console.log(imagenClonada)
 
