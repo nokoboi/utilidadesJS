@@ -1,10 +1,10 @@
-document.getElementById('toggleMenu').addEventListener('click',function (){
+document.getElementById('toggleMenu').addEventListener('click', function () {
     let myNav = document.getElementById('myNavbar');
     console.log(myNav.className)
 
-    if(myNav.className === 'navbar'){
+    if (myNav.className === 'navbar') {
         myNav.className += " responsive"
-    }else{
+    } else {
         myNav.className = 'navbar'
     }
 })
@@ -22,7 +22,7 @@ imagenesPequenas.forEach((imagen) => {
         event.preventDefault(); // Previene la acción por defecto del enlace
 
         // Clona la imagen para poder moverla sin eliminarla del original, clonenode hace una copia exacta
-        let clon = {...contenedorImg}
+        let clon = { ...contenedorImg }
         console.log(clon)
         const imagenClonada = imagen.cloneNode(true);
         console.log(imagenClonada)
@@ -38,4 +38,30 @@ imagenesPequenas.forEach((imagen) => {
     });
 });
 
+
+// MODAL
+const modal = document.getElementById('imageModal');
+const modalImg = document.querySelector('.modal-image'); // Devuelve uno solo
+const thumbnails = document.querySelectorAll('.thumbnail'); // Devuelve un array con todo lo que cumpla con esa clase, aunque fuese uno
+const closeBtn = document.querySelector('.close');
+
+// Bucle para las miniaturas (thumbnails)
+thumbnails.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+        modal.style.display = 'block'; // Mostramos el modal
+        modalImg.src = thumb.getAttribute('data-full');
+        modalImg.alt = thumb.alt;
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none'; // Cerramos el modal
+})
+
+// Si hacemos click con el modal abierto en cualquier parte de la pantalla, que se cierre
+window.onclick = (event) => {
+    if (event.target.classList.contains('modal-content')) {
+        modal.style.display = 'none'; // Cerramos el modal
+    }
+}
 

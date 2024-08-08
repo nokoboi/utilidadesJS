@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar" id="myNavbar">
+        <a href="navbar.html">Inicio</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="#contact">Contacto</a>
+        <a href="#about">Acerca de</a>
+        <a href="javascript:void(0)" class="icon" id="toggleMenu">&#9776;</a>
+        <!-- Eso hace referencia a un menú hamburguesa, lo que hay dentro del <a> -->
+    </nav>
+
+    <!-- Aquí las miniaturas -->
+    <div class="container">
+        <h1>Paisajes</h1>
+        <p>La imagen seleccionada se mostrará en una ventana modal</p>
+        <div class="gallery">
+            <!-- Para leer esos datos en javascript luego data- -->
+            <img src="assets/pequeñas/amanece.jpg" alt="imagen de un amanecer" class="thumbnail" data-full="assets/amanece.webp">
+            <img src="assets/pequeñas/atardecer.jpg" alt="imagen de un amanecer" class="thumbnail" data-full="assets/atardecer.webp">
+            <img src="assets/pequeñas/anochecer.jpg" alt="imagen de un amanecer" class="thumbnail" data-full="assets/anochecer.jpg">
+            <img src="assets/pequeñas/aurora.jpg" alt="imagen de un amanecer" class="thumbnail" data-full="assets/aurora.jpg">
+        </div>
+    </div>
+    <!-- Fin de miniaturas -->
+
+    <!-- Ventana modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img src="" alt="imagen ampliada" class="modal-image">
+        </div>
+    </div>
+    <!-- Fin ventana modal -->
+
+
+
+    <!-- Script -->
+    <script src="js/navbar.js"></script>
+</body>
+</html>
