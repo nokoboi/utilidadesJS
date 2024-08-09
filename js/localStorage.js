@@ -15,7 +15,7 @@ function guardarNombre() {
 }
 
 function mostrarNombre(name) {    
-    if(fecha.getHours() > 6){
+    if(fecha.getHours() > 6 && fecha.getHours()<12){
         saludoTxt.textContent = `Buenos días, ${name}`;
     }else if(fecha.getHours() >=12 && fecha.getHours()<=21){
         saludoTxt.textContent = `Buenas tardes, ${name}`;
